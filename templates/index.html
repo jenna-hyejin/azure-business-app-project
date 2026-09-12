@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Business App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <p class="eyebrow">INTERNAL BUSINESS APP</p>
+            <h1>Azure Business App</h1>
+            <p class="intro">
+                A small Azure project built to practise cloud hosting,
+                secure configuration and monitoring.
+            </p>
+        </header>
+
+        <section class="status-grid">
+
+            <div class="card">
+                <span class="label">Application</span>
+                <h2>Running</h2>
+                <p>Hosted on Azure App Service.</p>
+            </div>
+
+            <div class="card">
+                <span class="label">Configuration</span>
+                <h2>Key Vault</h2>
+                <p>Application secrets are stored outside the code.</p>
+            </div>
+
+            <div class="card">
+                <span class="label">Deployment</span>
+                <h2>GitHub Actions</h2>
+                <p>Changes pushed to GitHub are deployed automatically.</p>
+            </div>
+
+        </section>
+
+        <section class="message-box">
+            <span class="label">Key Vault Message</span>
+            <p>{{ message }}</p>
+        </section>
+
+        <footer>
+            Built with Python, Flask and Microsoft Azure.
+        </footer>
+
+    </main>
+
+</body>
+</html>
