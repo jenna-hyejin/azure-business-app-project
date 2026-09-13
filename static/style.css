@@ -28,7 +28,7 @@ h1 {
 }
 
 .intro {
-    max-width: 600px;
+    max-width: 650px;
     line-height: 1.6;
     color: #4b5563;
 }
@@ -56,7 +56,8 @@ h1 {
     color: #6b7280;
 }
 
-.card h2 {
+.card h2,
+.message-box h2 {
     margin: 10px 0;
     font-size: 22px;
 }
@@ -71,6 +72,51 @@ h1 {
     margin-top: 20px;
 }
 
+.saved-note {
+    padding: 16px;
+    background: #f5f7fa;
+    border-radius: 8px;
+    margin: 16px 0 20px;
+    min-height: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+textarea {
+    min-height: 100px;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+}
+
+button {
+    align-self: flex-start;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
 footer {
     margin-top: 40px;
     font-size: 13px;
@@ -78,11 +124,19 @@ footer {
 }
 
 @media (max-width: 700px) {
+    .container {
+        padding: 40px 18px;
+    }
+
     .status-grid {
         grid-template-columns: 1fr;
     }
 
     h1 {
         font-size: 34px;
+    }
+
+    button {
+        width: 100%;
     }
 }

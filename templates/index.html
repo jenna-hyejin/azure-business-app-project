@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Azure Business App</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 </head>
 
 <body>
@@ -14,10 +19,12 @@
 
         <header>
             <p class="eyebrow">INTERNAL BUSINESS APP</p>
+
             <h1>Azure Business App</h1>
+
             <p class="intro">
                 A small Azure project built to practise cloud hosting,
-                secure configuration and monitoring.
+                secure configuration, storage and monitoring.
             </p>
         </header>
 
@@ -32,7 +39,7 @@
             <div class="card">
                 <span class="label">Configuration</span>
                 <h2>Key Vault</h2>
-                <p>Application secrets are stored outside the code.</p>
+                <p>{{ key_vault_status }}</p>
             </div>
 
             <div class="card">
@@ -44,15 +51,37 @@
         </section>
 
         <section class="message-box">
-            <span class="label">Key Vault Message</span>
-            <p>{{ message }}</p>
+
+            <span class="label">Azure Blob Storage</span>
+
+            <h2>Business Note</h2>
+
+            <p class="saved-note">
+                {{ saved_note }}
+            </p>
+
+            <form action="{{ url_for('save_note') }}" method="POST">
+
+                <textarea
+                    name="note"
+                    placeholder="Enter a business note..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Save to Azure Storage
+                </button>
+
+            </form>
+
         </section>
 
         <footer>
-            Built with Python, Flask and Microsoft Azure.
+            Internal systems prototype for Azure architecture testing
         </footer>
 
     </main>
 
 </body>
+
 </html>
